@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+        <link rel="stylesheet" href="Math.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+
+    <body>
+        <div style="height: 100vh; width: 100vw; overflow: hidden;">
+        <!--Four(ish) Screens: Starting Screen (add selection later), transition (still part of canvas), problem screen, and end screen/-->
+            <div class="container-fluid" id="startingScreen">
+                <div>
+                    <div class="row header" style="padding-top: 40vh;"><h1>60 Second Fast Facts</h1></div>
+                    <div class="row header" style="padding-top: 1vh;"><h4>Click Anywhere to Begin Test!</h4></div>
+                    <!-- <div class="row" id="countdownDisplay" style="display:none;"><h1 style="padding-top: 40vh;"></h1></div> --> 
+                </div>
+            </div>
+
+            <div id="countdownScreen">
+                <div class="row" id="countdownDisplay" style="display:none;"><h1 style="padding-top: 40vh;"></h1></div>
+            </div>    
+
+            <div class="container-fluid" id="questions" style="display: none; width:100vw; height:100vh; overflow: hidden">
+                <div id="displayTimer"></div>
+                <h1 id="question">Math Question</h1>
+                <form action="" onsubmit='objectArray[objectArray.length - 1].questionLoop();return false'>
+                    <input id="answer" type="text">
+                </form>
+            </div>
+
+            <div class="container-fluid" id="review" style="display: none; width: 100vw;">
+                <div class= "row"><h1>Review</h1></div>
+                <div class="row" id = "Grade"><h2></h2></div>
+
+                <!--Replicating Table element just with more bootstrap flexibility added-->
+                <div id="questionList"></div>
+                <!--IMPORTANT: When asking for child nodes, whitespace called 'text' is a node, so remove it for convenience :)-->
+
+                <div class="row">
+                    <div class="col-4"></div> <!--Place holder-->
+                    <div id="resetButton" class="col-4" onclick="resetGame();return false">Reset</div>
+                </div>
+            </div>
+
+        </div>
+    </body>
+    <script src="Math.js"></script>
+    <script src="Transition.js"></script>
+</html>

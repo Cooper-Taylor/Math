@@ -1,0 +1,108 @@
+* {
+    align-content: center;
+    text-align: center;
+    padding: none;
+    border: none;
+    margin: none;
+}
+#question {
+    font-size: 4vw;
+}
+#answer {
+    font-size: 2vw;
+    width: 40vw;
+    text-align: center;
+    background-color: gray;
+}
+#displayTimer {
+    position: absolute;
+    font-size: 3vw;
+    top: 5%;
+    right: 5%;
+}
+
+@keyframes countdown{
+    0% {background-color: white;}
+    33% {background-color: red;}
+    66% {background-color: yellow;}
+    100% {background-color: green}
+}
+
+@keyframes bob{
+    0% {padding-top: 0vh}
+    50% {padding-top: 5vh}
+    100% {padding-top: 0vh}
+}
+
+
+@keyframes in-out{
+    50%{transform: scale(2)}
+}
+
+@keyframes enlargeText{
+    50%{font-size: 10vw};
+}
+/*Create a class that has the animation attribute bc it is much easier to remove classes than animations lol */
+.inOutAnimation{
+    animation: in-out 1.5s linear infinite;
+    transform-origin: right;
+}
+.enlargeTextAnimation{
+    animation: enlargeText 1.5s linear 3;
+}
+.bobAnimation{
+    animation: bob 3s linear infinite;
+}
+
+/*
+#countdownDisplay{
+    animation: in-out 1s linear infinite;
+} */
+
+#startingScreen{
+    padding: none;
+    border: none;
+    margin: none;
+    width: 100%;
+    height: 100%;
+    display: visible;
+    background-color: white;
+    /* animation: countdown 5s linear 1; */
+    /*animation: in-out 5s linear infinite; */
+}
+#startingScreen > div{
+    display: inherit;
+    color: black;
+}
+
+#countdownScreen{
+    padding: none;
+    border: none;
+    margin: none;
+    width: 100%;
+    height: 100%;
+    display: visible;
+    background-color: white;
+}
+
+#countdownScreen > div{
+    display: inherit;
+    color: black;
+    animation: in-out 1.5 linear 3;
+}
+#questionList{
+    width: 100%;
+    overflow-y: scroll;
+    height: 70vh;
+    overflow-x: hidden;
+}
+.animationZoom{
+    animation: in-out 1.5s linear 3; 
+}
+
+#resetButton{
+    font-size: 2vw;
+    font-weight: bold;
+    background: gray;
+    border: black 1px solid
+}
