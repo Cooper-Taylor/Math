@@ -171,16 +171,23 @@ function createProblem(problemType){
         return [solution, `${a} + ${b}`];
     }
     if (problemType == "-"){
-        var a = Math.floor(Math.random()*50);
-        var b = Math.floor(Math.random()*50);
+        //ensuring the difference is positive
+        var twoNum = [Math.floor(Math.random()*50),Math.floor(Math.random()*50)];
+        if (twoNum[0] >= twoNum[1]){
+            var a = twoNum[0];
+            var b = twoNum[1];
+        } else{
+            var a = twoNum[1];
+            var b = twoNum[0];
+        }
         var solution = a - b;
         console.log(solution);
         document.getElementById("question").innerHTML = `${a} - ${b}`;
         return [solution, `${a} - ${b}`];
     }
     if (problemType == "x"){
-        var a = Math.floor(Math.random()*15);
-        var b = Math.floor(Math.random()*15);
+        var a = Math.floor(Math.random()*12);
+        var b = Math.floor(Math.random()*12);
         var solution = a * b;
         console.log(solution);
         document.getElementById("question").innerHTML = `${a} x ${b}`;
@@ -188,8 +195,8 @@ function createProblem(problemType){
     }
     if (problemType == "/"){
         //a little different to ensure an integer solution is produced
-        var a = Math.floor(Math.random()*15);
-        var b = Math.floor(Math.random()*15);
+        var a = Math.floor(Math.random()*12);
+        var b = Math.floor(Math.random()*12);
         //denominator is not zero
         while (b == 0){
             b = Math.floor(Math.random()*15);
