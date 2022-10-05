@@ -121,6 +121,8 @@ function clickyevent(){
             clearInterval(timer);
             createGameTimer();
             document.getElementById("startingScreen").removeEventListener("click", clickyevent);
+            //Focusing on the answer textbox
+            document.getElementById("answer").focus();
         }
     }, 1500)
 };
